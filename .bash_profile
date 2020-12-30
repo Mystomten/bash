@@ -17,6 +17,7 @@ alias gds='git diff --stat'
 alias gdss='git diff --shortstat'
 alias gfp='git fetch -p'
 alias gpp='git pull -p'
+alias gsh='git show'
 
 ## Fancy git graphs
 alias glg='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)"'
@@ -25,6 +26,9 @@ alias glgl='git log --graph --abbrev-commit --decorate --format=format:"%C(bold 
 # Show 10 latest updated branches
 alias gbl='git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))"'
 alias gbr='git for-each-ref --count=10 --sort=-committerdate refs/remotes/origin --format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))"'
+
+# Show stash list
+alias gsl='git stash list --pretty=format:"%C(yellow)(%C(red)%gd%C(yellow)) %C(green)(%cr)%C(reset) - %s"'
 
 # Git branch autocomplete
 if [ -f ~/.git-completion.bash ]; then
@@ -49,8 +53,12 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias mkdir='mkdir -pv'
 alias numFiles='echo $(ls -1 | wc -l)'
+alias numRows="find . -type f ! -name '*serviceWorker.js' -name '*.js' -o  -name '*.scss' | xargs wc -l | sort -nr"
 alias c='clear'
 alias h='history'
+
+# Editor
+alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
